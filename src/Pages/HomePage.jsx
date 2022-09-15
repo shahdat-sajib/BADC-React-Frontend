@@ -22,9 +22,41 @@ const DemoPage = () => {
                 <img src={badcLogo} className='badclogo' alt='badc-logo' />
             </div>
             <div className='mt-1'>
-                <Slider/>
+                <Slider />
             </div>
-            
+
+            <div class="container text-center">
+                <div class="row row-cols-2">
+                    <div className="col bg-primary rounded" style={{ height: "100px", width: "150px" }}>
+                        <img src='' alt='card logo 1' />
+                        <div className='h6'>
+                            card title 1
+                        </div>
+                    </div>
+                    <div className="col bg-primary rounded" style={{ height: "100px", width: "150px" }}>
+                        <img src='' alt='card logo 1' />
+                        <div className='h6'>
+                            card title 1
+                        </div>
+                    </div>
+                    <div className="col bg-primary rounded" style={{ height: "100px", width: "150px" }}>
+                        <img src='' alt='card logo 1' />
+                        <div className='h6'>
+                            card title 1
+                        </div>
+                    </div>
+                    <div className="col bg-primary rounded" style={{ height: "100px", width: "150px" }}>
+                        <img src='' alt='card logo 1' />
+                        <div className='h6'>
+                            card title 1
+                        </div>
+                    </div>
+                    <div class="col">Column</div>
+                    <div class="col">Column</div>
+                    <div class="col">Column</div>
+                </div>
+            </div>
+
         </div>
     );
 }
