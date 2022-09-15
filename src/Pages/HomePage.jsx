@@ -3,6 +3,7 @@ import HomePage from '../Components/Appbar';
 import govtLogo from '../Assets/Logo/govtLogo.png';
 import badcLogo from '../Assets/Logo/badcLogo.png';
 import './HomePage.css'
+import Slider from '../Components/Slider';
 
 const DemoPage = () => {
     return (
@@ -20,6 +21,10 @@ const DemoPage = () => {
                 </div>
                 <img src={badcLogo} className='badclogo' alt='badc-logo' />
             </div>
+            <div className='mt-1'>
+                <Slider/>
+            </div>
+            
         </div>
     );
 }
