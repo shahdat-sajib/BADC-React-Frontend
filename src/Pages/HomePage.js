@@ -16,9 +16,18 @@ import MailIcon from '@mui/icons-material/Mail';
 import NotificationsIcon from '@mui/icons-material/Notifications';
 import MoreIcon from '@mui/icons-material/MoreVert';
 import mainLogo from '../Assets/Logo/mainLogo.png'
+import './Drawer.css'
 
 
 function HomePage() {
+
+    const openNav = () => {
+        document.getElementById("mySidenav").style.width = "150px";
+    }
+
+    const closeNav = () => {
+        document.getElementById("mySidenav").style.width = "0";
+    }
 
     const Search = styled('div')(({ theme }) => ({
         position: 'relative',
@@ -162,7 +171,18 @@ function HomePage() {
             <Box sx={{ flexGrow: 1 }}>
                 <AppBar position="static" style={{ backgroundColor: "#015204" }}>
                     <div className='d-flex align-items-center'>
+                        <div>
+                            <div id="mySidenav" className="sidenav">
+                                <a className="closebtn" onClick={closeNav}>&times;</a>
+                                <a href="https://www.google.com">View Contact</a>
+                                <a href="https://www.google.com">Send SMS</a>
+                                <a href="https://www.google.com">SMS History</a>
+                                <a href="https://www.google.com">SKIM Details</a>
+                            </div>
+                        </div>
+
                         <IconButton className='ps-4'
+                            onClick={openNav}
                             size="large"
                             edge="start"
                             color="inherit"
@@ -172,7 +192,7 @@ function HomePage() {
                             <MenuIcon />
                         </IconButton>
                         <Box sx={{ flexGrow: 1 }} />
-                        <img style={{width: "40px", marginRight: "10px"}} src={mainLogo} alt='main logo'/>
+                        <img style={{ width: "40px", marginRight: "10px" }} src={mainLogo} alt='main logo' />
                         <Typography style={{ fontFamily: 'Galada' }}
                             variant="h6"
                             noWrap
@@ -239,4 +259,4 @@ function HomePage() {
     )
 }
 
-export default HomePage
+export default HomePage;
