@@ -1,0 +1,29 @@
+.pagebar {
+    height: 60px;
+}
+
+.bdlogo {
+    margin: 6px; 
+    padding-left: 20px;
+}
+.badclogo {
+    margin: 6px; 
+    padding-right: 20px;
+}
+
+@media screen and (max-width: 450px) {
+    .mobile-text {
+        font-size: 15px;
+    }
+    .bdlogo {
+        margin: 5px; 
+        padding: 2px;
+    }
+    .badclogo {
+        margin: 5px; 
+        padding: 2px;
+    }
+    .pagebar {
+        height: 50px;
+    }
+  }
