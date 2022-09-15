@@ -169,7 +169,7 @@ function HomePage() {
                         >
                             <MenuIcon />
                         </IconButton>
-                        <Typography
+                        <Typography style={{fontFamily: 'Galada'}}
                             variant="h6"
                             noWrap
                             component="div"
