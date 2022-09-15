@@ -16,6 +16,7 @@ import MailIcon from '@mui/icons-material/Mail';
 import NotificationsIcon from '@mui/icons-material/Notifications';
 import MoreIcon from '@mui/icons-material/MoreVert';
 
+
 function HomePage() {
 
     const Search = styled('div')(({ theme }) => ({
@@ -159,8 +160,8 @@ function HomePage() {
         <div>
             <Box sx={{ flexGrow: 1 }}>
                 <AppBar position="static" style={{ backgroundColor: "#015204" }}>
-                    <Toolbar>
-                        <IconButton
+                    <div className='d-flex align-items-center'>
+                        <IconButton className='ps-4'
                             size="large"
                             edge="start"
                             color="inherit"
@@ -169,7 +170,8 @@ function HomePage() {
                         >
                             <MenuIcon />
                         </IconButton>
-                        <Typography style={{fontFamily: 'Galada'}}
+                        <Box sx={{ flexGrow: 1 }} />
+                        <Typography style={{ fontFamily: 'Galada' }}
                             variant="h6"
                             noWrap
                             component="div"
@@ -187,7 +189,7 @@ function HomePage() {
                             />
                         </Search> */}
                         <Box sx={{ flexGrow: 1 }} />
-                        <Box sx={{ display: { xs: 'none', md: 'flex' } }}>
+                        <Box className='me-3' sx={{ display: { xs: 'none', md: 'flex' } }}>
                             <IconButton size="large" aria-label="show 4 new mails" color="inherit">
                                 <Badge badgeContent={4} color="error">
                                     <MailIcon />
@@ -226,7 +228,7 @@ function HomePage() {
                                 <MoreIcon />
                             </IconButton>
                         </Box>
-                    </Toolbar>
+                    </div>
                 </AppBar>
                 {renderMobileMenu}
                 {renderMenu}
