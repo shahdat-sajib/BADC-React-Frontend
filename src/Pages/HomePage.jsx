@@ -4,6 +4,7 @@ import govtLogo from '../Assets/Logo/govtLogo.png';
 import badcLogo from '../Assets/Logo/badcLogo.png';
 import './HomePage.css'
 import Slider from '../Components/Slider';
+import HomepageCard from '../Components/MyCustomCard';
 
 const DemoPage = () => {
     return (
@@ -25,36 +26,31 @@ const DemoPage = () => {
                 <Slider />
             </div>
 
-            <div class="container text-center">
-                <div class="row row-cols-2">
-                    <div className="col bg-primary rounded" style={{ height: "100px", width: "150px" }}>
-                        <img src='' alt='card logo 1' />
-                        <div className='h6'>
-                            card title 1
-                        </div>
+            <div className='mycardBody d-flex py-1'>
+                <div className='row row-cols-2 row-cols-sm-2 row-cols-md-5'>
+                    <div className='col'>
+                        <HomepageCard />
                     </div>
-                    <div className="col bg-primary rounded" style={{ height: "100px", width: "150px" }}>
-                        <img src='' alt='card logo 1' />
-                        <div className='h6'>
-                            card title 1
-                        </div>
+                    <div className='col'>
+                        <HomepageCard />
                     </div>
-                    <div className="col bg-primary rounded" style={{ height: "100px", width: "150px" }}>
-                        <img src='' alt='card logo 1' />
-                        <div className='h6'>
-                            card title 1
-                        </div>
+                    <div className='col'>
+                        <HomepageCard />
                     </div>
-                    <div className="col bg-primary rounded" style={{ height: "100px", width: "150px" }}>
-                        <img src='' alt='card logo 1' />
-                        <div className='h6'>
-                            card title 1
-                        </div>
+                    <div className='col'>
+                        <HomepageCard />
                     </div>
-                    <div class="col">Column</div>
-                    <div class="col">Column</div>
-                    <div class="col">Column</div>
+                    <div className='col'>
+                        <HomepageCard />
+                    </div>
+                    <div className='col'>
+                        <HomepageCard />
+                    </div>
+                    <div className='col'>
+                        <HomepageCard />
+                    </div>
                 </div>
+                
             </div>
 
         </div>

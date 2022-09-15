@@ -1,0 +1,10 @@
+.cardForHome {
+    width: 250px;
+}
+
+@media screen and (max-height: 450px) {
+    .cardForHome {
+        width: 50px;
+        color: yellowgreen;
+    }
+}

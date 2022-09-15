@@ -3,11 +3,12 @@
 }
 
 .bdlogo {
-    margin: 6px; 
+    margin: 6px;
     padding-left: 20px;
 }
+
 .badclogo {
-    margin: 6px; 
+    margin: 6px;
     padding-right: 20px;
 }
 
@@ -48,6 +49,11 @@ Link {
     align-items: center;
 }
 
+.cardForHome {
+    width: 250px!important;
+    height: 100px!important;
+}
+
 @keyframes casdesflip {
     0% {
         transform: scale(1);
@@ -71,15 +77,28 @@ Link {
     .mobile-text {
         font-size: 15px;
     }
+
     .bdlogo {
-        margin: 5px; 
+        margin: 5px;
         padding: 2px;
     }
+
     .badclogo {
-        margin: 5px; 
+        margin: 5px;
         padding: 2px;
     }
+
     .pagebar {
         height: 50px;
     }
-  }
+
+    .cardForHome {
+        width: 150px!important;
+        height: 100px!important;
+    }
+
+    .mycardBody {
+        margin-left: 20px;
+    }
+
+}
