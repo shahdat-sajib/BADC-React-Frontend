@@ -15,6 +15,7 @@ import AccountCircle from '@mui/icons-material/AccountCircle';
 import MailIcon from '@mui/icons-material/Mail';
 import NotificationsIcon from '@mui/icons-material/Notifications';
 import MoreIcon from '@mui/icons-material/MoreVert';
+import mainLogo from '../Assets/Logo/mainLogo.png'
 
 
 function HomePage() {
@@ -171,6 +172,7 @@ function HomePage() {
                             <MenuIcon />
                         </IconButton>
                         <Box sx={{ flexGrow: 1 }} />
+                        <img style={{width: "40px", marginRight: "10px"}} src={mainLogo} alt='main logo'/>
                         <Typography style={{ fontFamily: 'Galada' }}
                             variant="h6"
                             noWrap
