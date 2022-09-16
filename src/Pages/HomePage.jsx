@@ -31,24 +31,6 @@ const DemoPage = () => {
                     <div className='col'>
                         <HomepageCard />
                     </div>
-                    <div className='col'>
-                        <HomepageCard />
-                    </div>
-                    <div className='col'>
-                        <HomepageCard />
-                    </div>
-                    <div className='col'>
-                        <HomepageCard />
-                    </div>
-                    <div className='col'>
-                        <HomepageCard />
-                    </div>
-                    <div className='col'>
-                        <HomepageCard />
-                    </div>
-                    <div className='col'>
-                        <HomepageCard />
-                    </div>
                 </div>
                 
             </div>
