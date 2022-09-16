@@ -25,27 +25,16 @@ const MyCustomCard = () => {
 
   const renderCard = (card, index) => {
     return (
-      <Card style={{ width: '18rem' }}>
-        <Card.Img variant="top" src={card.icon} />
-        <Card.Body>
-          <Card.Title>{card.title}</Card.Title>
-        </Card.Body>
+      <Card className=' m-2 box cardForHome border-0 shadow-sm' key={index}>
+        <div><img className='cardImg mt-2' src={card.icon} alt='cardlogo1' /></div>
+        <div className='h6 mt-2' style={{ fontFamily: 'Galada' }}>{card.title}</div>
       </Card>
     )
   }
 
   return (
-    <div>
-      {cardInfo.map(renderCard)}
-
-      {/* <div className='cardForHome shadow mt-3 rounded d-flex justify-content-center align-items-center'>
-        <div>
-          <img className='w-25' src={sech} alt='cardlogo1' />
-          <div className='h6 mt-3' style={{ fontFamily: 'Galada' }}>
-            সেচ গ্রাহকবৃন্দ
-          </div>
-        </div>
-      </div> */}
+    <div className='d-flex row justify-content-evenly px-3'>
+        {cardInfo.map(renderCard)}
     </div>
   )
 }

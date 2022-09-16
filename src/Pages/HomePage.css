@@ -50,8 +50,12 @@ Link {
 }
 
 .cardForHome {
-    width: 250px!important;
-    height: 100px!important;
+    width: 250px !important;
+    height: 100px !important;
+}
+
+.cardImg {
+    width: 70px;
 }
 
 @keyframes casdesflip {
@@ -93,12 +97,16 @@ Link {
     }
 
     .cardForHome {
-        width: 150px!important;
-        height: 100px!important;
+        width: 170px !important;
+        height: 100px !important;
     }
 
-    .mycardBody {
-        margin-left: 20px;
+    .cardImg {
+        width: 50px;
     }
+
+    /* .mycardBody {
+        margin-left: 20px;
+    } */
 
 }

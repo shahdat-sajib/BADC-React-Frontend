@@ -26,14 +26,17 @@ const DemoPage = () => {
                 <Slider />
             </div>
 
-            <div className='mycardBody d-flex py-1'>
+            <div>
+                <HomepageCard />
+            </div>
+
+            {/* <div className='mycardBody d-flex py-1'>
                 <div className='row row-cols-2 row-cols-sm-2 row-cols-md-5'>
                     <div className='col'>
                         <HomepageCard />
                     </div>
                 </div>
-                
-            </div>
+            </div> */}
 
         </div>
     );
