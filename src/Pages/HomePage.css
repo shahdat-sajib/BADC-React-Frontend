@@ -52,6 +52,12 @@ Link {
 .cardForHome {
     width: 250px !important;
     height: 100px !important;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0), 0 3px 7px rgba(0, 0, 0, 0.1);
+}
+
+.cardForHome:hover {
+    transform: scale(1.04);
+    box-shadow: 0 15px 25px rgba(0, 0, 0, 0), 0 3px 7px rgba(0, 0, 0, 0.2);
 }
 
 .cardImg {

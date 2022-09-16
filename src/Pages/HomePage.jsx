@@ -1,5 +1,5 @@
 import React from 'react';
-import HomePage from '../Components/Appbar';
+import Appbar from '../Components/Appbar';
 import govtLogo from '../Assets/Logo/govtLogo.png';
 import badcLogo from '../Assets/Logo/badcLogo.png';
 import './HomePage.css'
@@ -9,7 +9,7 @@ import HomepageCard from '../Components/MyCustomCard';
 const DemoPage = () => {
     return (
         <div>
-            <HomePage />
+            <Appbar />
             <div className='pagebar shadow d-flex justify-content-between'>
                 <img src={govtLogo} className='bdlogo' alt='bd-govt-logo' />
                 <div style={{ fontFamily: 'Galada' }}>

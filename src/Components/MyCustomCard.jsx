@@ -36,43 +36,43 @@ const MyCustomCard = () => {
   // }
 
   return (
-    <div className='d-flex row justify-content-evenly px-3' style={{ fontFamily: 'Galada' }}>
-      <Card onClick={() => { navigate('/irrigation-customers') }} className=' m-2 box cardForHome border-0 shadow-sm'>
+    <div className='d-flex row justify-content-evenly px-3 mt-2' style={{ fontFamily: 'Galada' }}>
+      <Card onClick={() => { navigate('/irrigation-customers') }} className='m-2 box cardForHome border-0'>
           <div><img className='cardImg mt-2' src={sech} alt='cardlogo1' /></div>
           <div className='h6 mt-2'>সেচ গ্রাহকবৃন্দ</div>
         </Card>
 
-      <Card onClick={() => { navigate('/skim-Managers') }} className=' m-2 box cardForHome border-0 shadow-sm'>
+      <Card onClick={() => { navigate('/skim-Managers') }} className=' m-2 box cardForHome border-0'>
         <div><img className='cardImg mt-2' src={manager} alt='cardlogo1' /></div>
         <div className='h6 mt-2'>স্কিম ম্যানেজারগণ</div>
       </Card>
 
-      <Card onClick={() => { navigate('/officers-employees') }} className=' m-2 box cardForHome border-0 shadow-sm'>
+      <Card onClick={() => { navigate('/officers-employees') }} className=' m-2 box cardForHome border-0'>
         <div><img className='cardImg mt-2' src={officer} alt='cardlogo1' /></div>
         <div className='h6 mt-2'>কর্মকর্তা/কর্মচারী</div>
       </Card>
 
-      <Card onClick={() => { navigate('/send-sms') }} className=' m-2 box cardForHome border-0 shadow-sm'>
+      <Card onClick={() => { navigate('/send-sms') }} className=' m-2 box cardForHome border-0'>
         <div><img className='cardImg mt-2' src={sms} alt='cardlogo1' /></div>
         <div className='h6 mt-2'>বার্তা প্রদান</div>
       </Card>
 
-      <Card onClick={() => { navigate('/action-plan') }} className=' m-2 box cardForHome border-0 shadow-sm'>
+      <Card onClick={() => { navigate('/action-plan') }} className=' m-2 box cardForHome border-0'>
         <div><img className='cardImg mt-2' src={task} alt='cardlogo1' /></div>
         <div className='h6 mt-2'>কর্ম পরিকল্পনা</div>
       </Card>
 
-      <Card onClick={() => { navigate('/phoneBook') }} className=' m-2 box cardForHome border-0 shadow-sm'>
+      <Card onClick={() => { navigate('/phoneBook') }} className=' m-2 box cardForHome border-0'>
         <div><img className='cardImg mt-2' src={phone} alt='cardlogo1' /></div>
         <div className='h6 mt-2'>ফোনবুক</div>
       </Card>
 
-      <Card onClick={() => { navigate('/remindar') }} className=' m-2 box cardForHome border-0 shadow-sm'>
+      <Card onClick={() => { navigate('/remindar') }} className=' m-2 box cardForHome border-0'>
         <div><img className='cardImg mt-2' src={reminder} alt='cardlogo1' /></div>
         <div className='h6 mt-2'>রিমাইন্ডার</div>
       </Card>
 
-      <Card onClick={() => { navigate('/archieve') }} className=' m-2 box cardForHome border-0 shadow-sm'>
+      <Card onClick={() => { navigate('/archieve') }} className=' m-2 box cardForHome border-0'>
         <div><img className='cardImg mt-2' src={archive} alt='cardlogo1' /></div>
         <div className='h6 mt-2'>আর্কাইভ</div>
       </Card>

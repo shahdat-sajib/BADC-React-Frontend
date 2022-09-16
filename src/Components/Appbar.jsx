@@ -17,7 +17,7 @@ import mainLogo from '../Assets/Logo/mainLogo.png'
 import './Appbar.css'
 
 
-function HomePage() {
+function Appbar() {
 
     const openNav = () => {
         document.getElementById("mySidenav").style.width = "150px";
@@ -257,4 +257,4 @@ function HomePage() {
     )
 }
 
-export default HomePage;
+export default Appbar;
