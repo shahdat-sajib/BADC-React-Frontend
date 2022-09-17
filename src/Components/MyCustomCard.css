@@ -2,12 +2,19 @@
     width: 250px;
 }
 
+.cardForPhone {
+    width: 250px;
+}
+
 .cardImg {
     width: 50px;
 }
 
 @media screen and (max-height: 450px) {
     .cardForHome {
+        width: 200px!important;
+    }
+    .cardForPhone {
         width: 200px!important;
     }
 }
