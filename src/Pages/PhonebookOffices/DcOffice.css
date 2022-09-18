@@ -1,0 +1,38 @@
+.subHeadingDiv {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+.subHeadingCard {
+    width: 140px;
+    height: 35px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+.headingCardImg {
+    width: 30px;
+    margin-right: 7px;
+}
+
+.phonebookMainCard {
+    display: flex;
+    flex-direction: row;
+    /* align-items: center;
+    justify-content: center; */
+}
+
+
+.mainCardImg {
+    width: 100px;
+    margin-right: 7px;
+}
+
+.phoneMainCardIcon {
+    width: 30px;
+    margin-right: 7px;
+}
