@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import './DcOffice.css';
 import Appbar from '../../Components/Appbar';
 import Card from 'react-bootstrap/Card';
@@ -8,7 +8,26 @@ import phoneIcon from '../../Assets/Icons/phoneIcon.png'
 import messageIcon from '../../Assets/Icons/messageIcon.png'
 import officerIcon from '../../Assets/Icons/officerIcon.png'
 
+import Requests from '../../Requests/OfficeDetailsApi/OfficeDetailsApi'
+
 const DcOffice = () => {
+  const [data, setData] = useState([]);
+
+  const getData = async () => {
+    try {
+      const response = await Requests.OfficeDetails();
+      setData(response.data);
+      console.log("Checking data:::::::::", data);
+    } catch (error) {
+      console.log(error.response);
+    }
+  };
+
+  useEffect(() => {
+    getData();
+  },);
+
+  
   return (
     <div>
       <Appbar />
@@ -36,7 +55,7 @@ const DcOffice = () => {
               <div className='h6 mt-3'>মোঃ জোহর আলী</div>
               <div className='h6'>জেলা প্রশাসক</div>
               <div className='h6'>মোঃ 01XXX-XXXXXX</div>
-              
+
               <div>
                 <img className='phoneMainCardIcon' src={phoneIcon} alt='cardlogo1' />
                 <img className='phoneMainCardIcon ms-4' src={messageIcon} alt='cardlogo1' />
