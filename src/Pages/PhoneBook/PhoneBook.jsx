@@ -1,8 +1,8 @@
 import React from 'react';
 import './PhoneBook.css';
-import Appbar from '../Components/Appbar';
-import HeadingCard from '../Components/HeadingCard';
-import MyCustomCardForPhoneBook from '../Components/MyCustomCardForPhoneBook';
+import Appbar from '../../Components/Appbar';
+import HeadingCard from '../../Components/HeadingCard';
+import MyCustomCardForPhoneBook from '../../Components/MyCustomCardForPhoneBook';
 
 const PhoneBook = () => {
   return (

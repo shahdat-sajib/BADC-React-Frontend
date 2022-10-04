@@ -1,15 +1,15 @@
 import React, { useState, useEffect } from 'react';
 import './DcOffice.css';
-import Appbar from '../../Components/Appbar';
+import Appbar from '../../../Components/Appbar';
 import Card from 'react-bootstrap/Card';
-import govtLogo from '../../Assets/Logo/govtLogo.png'
-import officerLogo from '../../Assets/Icons/manager.png'
-import phoneIcon from '../../Assets/Icons/phoneIcon.png'
-import messageIcon from '../../Assets/Icons/messageIcon.png'
-import officerIcon from '../../Assets/Icons/officerIcon.png'
+import govtLogo from '../../../Assets/Logo/govtLogo.png'
+import officerLogo from '../../../Assets/Icons/manager.png'
+import phoneIcon from '../../../Assets/Icons/phoneIcon.png'
+import messageIcon from '../../../Assets/Icons/messageIcon.png'
+import officerIcon from '../../../Assets/Icons/officerIcon.png'
 
 // import Requests from '../../Requests/OfficeDetailsApi/OfficeDetailsApi'
-import Requests from '../../Requests/EmployeeDetailsApi/EmployeeDetailsApi'
+import Requests from '../../../Requests/EmployeeDetailsApi/EmployeeDetailsApi'
 
 const DcOffice = () => {
   const [data, setData] = useState([]);
@@ -60,7 +60,7 @@ const DcOffice = () => {
 
                   <div className='text-start ms-5 mb-2'>
                     <div className='h6 mt-3'>{employee.employeeName}</div>
-                    <div style={{ fontFamily: "Galada" }} className='h6'>জেলা প্রশাসক</div>
+                    <div style={{ fontFamily: "Galada" }} className='h6'>{employee.employeeDesignation}</div>
                     <div className='h6'>{employee.employeePhone}</div>
 
                     <div>

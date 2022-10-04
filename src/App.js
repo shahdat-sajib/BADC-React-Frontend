@@ -4,24 +4,24 @@ import HomePage from './Pages/HomePage';
 import SechGrahok from './Pages/SechGrahok';
 import SkimManager from './Pages/SkimManager';
 import Kormokorta from './Pages/Kormokorta';
-import BartaProdan from './Pages/BartaProdan';
+import BartaProdan from './Pages/BartaProdan/BartaProdan';
 import KormoPorikolpona from './Pages/KormoPorikolpona';
-import PhoneBook from './Pages/PhoneBook';
+import PhoneBook from './Pages/PhoneBook/PhoneBook';
 import Remindar from './Pages/Remindar';
 import Archieve from './Pages/Archieve';
 
-import DcOffice from './Pages/PhonebookOffices/DcOffice';
-import SpOffice from './Pages/PhonebookOffices/SpOffice';
-import AnsarOffice from './Pages/PhonebookOffices/AnsarOffice';
-import FireOffice from './Pages/PhonebookOffices/FireOffice';
-import JuboUnnoyon from './Pages/PhonebookOffices/JuboUnnoyon';
-import LandOffice from './Pages/PhonebookOffices/LandOffice';
-import Pbs from './Pages/PhonebookOffices/Pbs';
-import Pouroshova from './Pages/PhonebookOffices/Pouroshova';
-import RabOffice from './Pages/PhonebookOffices/RabOffice';
-import WdbOffice from './Pages/PhonebookOffices/WdbOffice';
-import ZilaPorishod from './Pages/PhonebookOffices/ZilaPorishod';
-import LgedOffice from './Pages/PhonebookOffices/LgedOffice';
+import DcOffice from './Pages/PhoneBook/PhonebookOffices/DcOffice';
+import SpOffice from './Pages/PhoneBook/PhonebookOffices/SpOffice';
+import AnsarOffice from './Pages/PhoneBook/PhonebookOffices/AnsarOffice';
+import FireOffice from './Pages/PhoneBook/PhonebookOffices/FireOffice';
+import JuboUnnoyon from './Pages/PhoneBook/PhonebookOffices/JuboUnnoyon';
+import LandOffice from './Pages/PhoneBook/PhonebookOffices/LandOffice';
+import Pbs from './Pages/PhoneBook/PhonebookOffices/Pbs';
+import Pouroshova from './Pages/PhoneBook/PhonebookOffices/Pouroshova';
+import RabOffice from './Pages/PhoneBook/PhonebookOffices/RabOffice';
+import WdbOffice from './Pages/PhoneBook/PhonebookOffices/WdbOffice';
+import ZilaPorishod from './Pages/PhoneBook/PhonebookOffices/ZilaPorishod';
+import LgedOffice from './Pages/PhoneBook/PhonebookOffices/LgedOffice';
 
 function App() {
   return (
