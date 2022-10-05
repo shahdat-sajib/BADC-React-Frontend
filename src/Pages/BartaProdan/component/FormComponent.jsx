@@ -21,13 +21,7 @@ import { styles } from "./common/styles";
 class FormComponent extends Component {
   state = {
     data: {
-      uploadPhoto: "",
-      region: "",
-      area: "",
-      cc: "",
-      center: "",
-      cp: "",
-      cpcode: "",
+      message: "",
       card: "",
       whichCard: "",
     },
@@ -53,6 +47,7 @@ class FormComponent extends Component {
     };
 
     const handleWhichCard = ( target ) => {
+      console.log("button clicked");
       const { data, errors } = this.state;
       data["whichCard"] = target;
       this.setState({data, errors})
@@ -130,6 +125,7 @@ class FormComponent extends Component {
               handleChange={handleOnChange}
               handleNext={handleNextStep}
               handleSubmit={handleSubmit}
+              handleWhichCa={handleWhichCard}
 
             />
           );

@@ -13,11 +13,15 @@ export const renderInputField = ({ name, label, type, state, onChange }) => {
   return (
     <TextField
       required
+      style={{ textAlign: 'left' }}
+      hintText="Type message"
+      floatingLabelText="MultiLine and FloatingLabel"
+      multiline
+      rows={10}
       label={label}
       type={type ? type : "text"}
       variant='outlined'
       color='primary'
-      size='small'
       fullWidth={true}
       name={name}
       value={data[name]}

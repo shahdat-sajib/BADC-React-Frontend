@@ -27,12 +27,12 @@ const Step1 = ({ state, handleChange, handleNext, handleWhichCa }) => {
       </Box>
 
       <div className='d-flex mx-3 mt-2' style={{ fontFamily: 'Galada' }}>
-        <Card onClick={() => handleWhichCa("1")} className='m-2 box cardForHome border-0' style={{ backgroundColor: "lemonchiffon" }}>
+        <Card onClick={() => {handleWhichCa("1"); handleNext()}} className='m-2 box cardForHome border-0' style={{ backgroundColor: "lemonchiffon" }}>
           <div><img className='cardImg mt-2' src={sech} alt='cardlogo1' /></div>
           <div className='h6 mt-2'>সেচ গ্রাহকবৃন্দ</div>
         </Card>
 
-        <Card onClick={() => handleWhichCa("2")} className=' m-2 box cardForHome border-0' style={{ backgroundColor: "lemonchiffon" }}>
+        <Card onClick={() => {handleWhichCa("2"); handleNext()}} className=' m-2 box cardForHome border-0' style={{ backgroundColor: "lemonchiffon" }}>
           <div><img className='cardImg mt-2' src={manager} alt='cardlogo1' /></div>
           <div className='h6 mt-2'>স্কিম ম্যানেজারগণ</div>
         </Card>
@@ -115,9 +115,9 @@ const Step1 = ({ state, handleChange, handleNext, handleWhichCa }) => {
         </Grid>
       </Grid> */}
 
-      <Grid container component={Box} justify='center' className="mt-3">
+      {/* <Grid container component={Box} justify='center' className="mt-3">
         {renderButton({ label: "Next", onClick: handleNext })}
-      </Grid>
+      </Grid> */}
     </Paper>
   );
 };

@@ -1,5 +1,5 @@
 import React from "react";
-import { Box, Grid, Paper } from "@material-ui/core";
+import { Box, Button, Grid, Paper } from "@material-ui/core";
 import { styles } from "../common/styles";
 
 import {
@@ -14,110 +14,41 @@ const Step4 = ({ state, handleChange, handleNext, handlePrev }) => {
   return (
 
     <Paper style={styles.steps}>
-      <Box mt={2} mb={2}>
+      <Box style={{ marginTop: "-10px", marginBottom: "15px" }}>
         {renderText({
-          label: "Others Info",
-          type: "h6",
+          label: "Type your messages",
           color: "textPrimary",
           align: "center",
         })}
       </Box>
 
-
-
-      <Grid container spacing={1} style={{ marginBottom: "16px" }}>
-        <Grid item xs={4} sm={4}>
-          {renderInputField({
-            state,
-            name: "cross",
-            label: "Cross COW",
-            onChange: handleChange,
-          })}
-        </Grid>
-        <Grid item xs={4} sm={4}>
-          {renderInputField({
-            state,
-            name: "crossmilk",
-            label: "Cross avg milk",
-            onChange: handleChange,
-          })}
-        </Grid>
-        <Grid item xs={4} sm={4}>
-          {renderInputField({
-            state,
-            name: "native",
-            label: "Native COW",
-            onChange: handleChange,
-          })}
-        </Grid>
-
-      </Grid>
-      <Grid container spacing={1} style={{ marginBottom: "16px" }}>
-        <Grid item xs={4} sm={4}>
-          {renderInputField({
-            state,
-            name: "nativemilk",
-            label: "Native avg milk",
-            onChange: handleChange,
-          })}
-        </Grid>
-        <Grid item xs={4} sm={4}>
-          {renderInputField({
-            state,
-            name: "HF",
-            label: "Cross HF",
-            onChange: handleChange,
-          })}
-        </Grid>
-        <Grid item xs={4} sm={4}>
-          {renderInputField({
-            state,
-            name: "nativeHF",
-            label: "Native HF",
-            onChange: handleChange,
-          })}
-        </Grid>
-
-      </Grid>
-      <Grid container spacing={1} style={{ marginBottom: "16px" }}>
-        <Grid item xs={4} sm={4}>
-          {renderInputField({
-            state,
-            name: "bullcalf",
-            label: "Bull CALF",
-            onChange: handleChange,
-          })}
-        </Grid>
-        <Grid item xs={4} sm={4}>
-          {renderInputField({
-            state,
-            name: "hfcalf",
-            label: "HF CALF",
-            onChange: handleChange,
-          })}
-        </Grid>
-        <Grid item xs={4} sm={4}>
-          {renderInputField({
-            state,
-            name: "bulls",
-            label: "Bulls",
-            onChange: handleChange,
-          })}
-        </Grid>
-
+      <Grid item xs={12} sm={12}>
+        {renderInputField({
+          state,
+          name: "message",
+          onChange: handleChange,
+        })}
       </Grid>
 
 
 
-      <Grid container component={Box} justify='flex-end' mt={2} p={2}>
-        <Box ml={2}>
+
+
+      <Grid container component={Box} justify='center' className="mt-3">
+        <Box className="me-2 bg-success">
+        {renderButton({
+            label: "SEND",
+            onClick: handleNext,
+            color: "green"
+          })}
+        </Box>
+        <Box>
           {renderButton({
             label: "Back",
             color: "default",
             onClick: handlePrev,
           })}
         </Box>
-        <Box ml={2}>{renderButton({ label: "Finish", onClick: handleNext })}</Box>
       </Grid>
     </Paper>
   );
