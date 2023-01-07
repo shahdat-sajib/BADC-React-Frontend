@@ -21,6 +21,7 @@ import { collection, addDoc } from 'firebase/firestore';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import { FormControl, InputLabel, MenuItem, Select, TextField } from '@mui/material';
+import Phonelist from '../Components/phonelist';
 
 const SechGrahok = () => {
   const [name, setName] = React.useState("");
@@ -64,7 +65,9 @@ const SechGrahok = () => {
           <div>
             <Button style={{ backgroundColor: "green" }} className='px-5 py-1' type='submit'>Add</Button>
           </div>
-          
+          <div>
+            <Phonelist/>
+          </div>
         </Form>
       </div>
     </div>
