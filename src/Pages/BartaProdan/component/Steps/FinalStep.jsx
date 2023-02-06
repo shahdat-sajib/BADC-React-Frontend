@@ -16,7 +16,6 @@ const FinalStep = ({ data }) => {
     console.log("going home")
   }
   const [isChecked, setIsChecked] = useState(false);
-  console.log('data check', data);
 
   return (
     <Paper style={styles.steps}>

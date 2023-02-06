@@ -28,6 +28,15 @@ export default function Phonelist({
             onChange={handleChange}
             />
             <div>
+        <button
+          className="button-edit"
+          onClick={() => handleEdit(todo, newTitle)}
+        >
+          <Edit id="i" />
+        </button>
+        <button className="button-delete" onClick={() => handleDelete(todo.id)}>
+          <Delete id="i" />
+        </button>
       </div>
         </div>
     )

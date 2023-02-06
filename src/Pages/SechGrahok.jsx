@@ -40,12 +40,9 @@ const SechGrahok = () => {
     });
     return () => unsub();
   }, []);
-  
+
   const handleEdit = async (todo, title) => {
     await updateDoc(doc(db, "todos", todo.id), { title: title });
-  };
-  const toggleComplete = async (todo) => {
-    await updateDoc(doc(db, "todos", todo.id), { completed: !todo.completed });
   };
   const handleDelete = async (id) => {
     await deleteDoc(doc(db, "todos", id));
@@ -59,7 +56,7 @@ const SechGrahok = () => {
         <Form onSubmit={handleSubmit}>
           <TextField className='mb-2 mt-3' size='small' id="title" label="Name" variant="outlined" value={title} onChange={(e) => setTitle(e.target.value)} />
           <TextField className='mb-2' id="phone" size='small' label="Phone" variant="outlined" value={phone} onChange={(e) => setPhone(e.target.value)} />
-          <FormControl className='mb-2' style={{width: "220px"}}>
+          <FormControl className='mb-2' style={{ width: "220px" }}>
             <InputLabel size='small' id="dropdown">Type</InputLabel>
             <Select size='small'
               labelId="dropdown-label"
@@ -75,16 +72,17 @@ const SechGrahok = () => {
           <div>
             <Button style={{ backgroundColor: "green" }} className='px-5 py-1' type='submit'>Add</Button>
           </div>
+
+
           <div>
-          {todos.map((todo) => (
-          <Phonelist
-            key={todo.id}
-            todo={todo}
-            toggleComplete={toggleComplete}
-            handleDelete={handleDelete}
-            handleEdit={handleEdit}
-          />
-        ))}
+            {todos.map((todo) => (
+              <Phonelist
+                key={todo.id}
+                todo={todo}
+                handleDelete={handleDelete}
+                handleEdit={handleEdit}
+              />
+            ))}
           </div>
         </Form>
       </div>

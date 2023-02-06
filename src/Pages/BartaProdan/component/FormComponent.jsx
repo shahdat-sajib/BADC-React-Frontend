@@ -1,4 +1,4 @@
-import React, {Component } from "react";
+import React, { Component } from "react";
 
 import PropTypes from "prop-types";
 import {
@@ -13,7 +13,7 @@ import {
 import Step1 from "./Steps/step1";
 import Step2 from "./Steps/step2";
 import Step3 from "./Steps/step3";
-// import Step4 from "./Steps/step4";
+import RicipentSelectionTable from "./Steps/RicipentSelectionTable";
 import FinalStep from "./Steps/FinalStep";
 import { renderText } from "./common/DisplayComponent";
 import { styles } from "./common/styles";
@@ -36,8 +36,7 @@ class FormComponent extends Component {
   };
 
   render() {
-  // const [image, setImage] = useState("");
-  console.log(this.state.data)
+    console.log(this.state.data)
 
     const { classes } = this.props;
 
@@ -46,11 +45,11 @@ class FormComponent extends Component {
       console.log("form submitted");
     };
 
-    const handleWhichCard = ( target ) => {
+    const handleWhichCard = (target) => {
       console.log("button clicked");
       const { data, errors } = this.state;
       data["whichCard"] = target;
-      this.setState({data, errors})
+      this.setState({ data, errors })
     }
 
     const handleOnChange = ({ target }) => {
@@ -76,6 +75,10 @@ class FormComponent extends Component {
       this.setState({ stepCount });
     };
 
+
+    <RicipentSelectionTable data22={this.state.data} />
+    
+
     const getStepContent = (step) => {
       switch (step) {
         case 0:
@@ -90,12 +93,12 @@ class FormComponent extends Component {
         case 1:
           return (
             <Step2
-              state={this.state}
+              data={this.state.data}
               handleChange={handleOnChange}
               handleNext={handleNextStep}
               handlePrev={handleBackStep}
-              // image={image}
-              // setImage={setImage}
+            // image={image}
+            // setImage={setImage}
             />
           );
         case 2:
