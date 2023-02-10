@@ -5,22 +5,25 @@ import {
   renderButton,
   renderText,
 } from "../common/DisplayComponent";
-import RicipentSelectionTable from "./RicipentSelectionTable";
+import DataTable from 'react-data-table-component';
 import { db } from '../../../../firebase';
 import { collection, addDoc } from 'firebase/firestore';
 import { query, onSnapshot, updateDoc, deleteDoc, doc } from 'firebase/firestore';
-import DataTable from 'react-data-table-component';
 
 
 const Step2 = ({ state, handleChange, handleNext, handlePrev, data }) => {
-  const [todos, setTodos] = React.useState([]);
   const [sortedArrayForOne, setSortedArrayForOne] = React.useState([]);
+  const [todos, setTodos] = React.useState([]);
+  const filteredDataForType1 = todos.filter(todo => todo.type === 1);
+  const filteredDataForType2 = todos.filter(todo => todo.type === 2);
 
   // console.log("data in selection table", data);
   
-  if(data.whichCard === '2'){
-    console.log("option 2 detected>>>>>>>>>>>>>>>");
-  }
+  // if(data.whichCard === '1'){
+  //   console.log("option 1 detected>>>>>>>>>>>>>>>");
+    
+  //   console.log("filtered data step2::::::::::::::::::::::::", filteredData);
+  // }
 
   React.useEffect(() => {
     const q = query(collection(db, "todos"));
@@ -34,36 +37,34 @@ const Step2 = ({ state, handleChange, handleNext, handlePrev, data }) => {
     return () => unsub();
   }, []);
 
-  // React.useEffect(() => {
-  //   if (todos.length > 0) {
-  //     handleMapArray();
-  //   }
-  // }, [todos]);
 
-  console.log("todos data::::::::::::::::::::::::", todos);
+  // const handleMapArray = () => {
+  //   todos.map(todo => {
+  //     if (todo.type === 1) {
+  //       setSortedArrayForOne([...sortedArrayForOne, todo]);
+  //       console.log("type 1 found >>>>>>>>>>>>>>>>>>>>>");
+  //     }
+  //   });
+  // };
 
-  const handleMapArray = () => {
-    todos.map(todo => {
-      if (todo.type === 1) {
-        setSortedArrayForOne([...sortedArrayForOne, todo]);
-        console.log("type 1 found >>>>>>>>>>>>>>>>>>>>>");
-      }
-    });
-  };
+  // const DataList = ({data}) => {
+  //   const mappedData = data.map((item) => {
+  //     if (item.type === 1) {
+  //       return <p>1 is found</p>
+  //     } else {
+  //       return <p>{item.type} is found</p>
+  //     }
+  //   });}
 
-  const DataList = ({data}) => {
-    const mappedData = data.map((item) => {
-      if (item.type === 1) {
-        return <p>1 is found</p>
-      } else {
-        return <p>{item.type} is found</p>
-      }
-    });}
-
-  console.log("sorted array test>>>>>>>>>>>>>", sortedArrayForOne);
+  // console.log("sorted array test>>>>>>>>>>>>>", sortedArrayForOne);
 
   // if(data.whichCard === '1'){
   //   console.log("option 1 detected>>>>>>>>>>>>>>>");
+  //   selectedType = filteredDataForType1
+  // }
+  // if(data.whichCard === '2'){
+  //   console.log("option 2 detected>>>>>>>>>>>>>>>");
+  //   selectedType = filteredDataForType2
   // }
 
   const columns = [
@@ -91,25 +92,35 @@ const Step2 = ({ state, handleChange, handleNext, handlePrev, data }) => {
           align: "center",
         })}
       </Box>
-      {DataList}
-
-      {/* <div>
-        <RicipentSelectionTable/>
-      </div> */}
+      {/* {DataList} */}
       <div>
-        <DataTable
+      {(data.whichCard === '1')  ? <DataTable
           title=" "
           columns={columns}
-          data={todos}
+          data={filteredDataForType1}
           pagination
           fixedHeaderScrollHeight='450px'
           selectableRows
           selectableRowsHighlight
-        // subHeader
-        // subHeaderComponent={
-        //   <input type="text" placeholder="Search" />
-        // }
-        />
+        /> : <DataTable
+        title=" "
+        columns={columns}
+        data={filteredDataForType2}
+        pagination
+        fixedHeaderScrollHeight='450px'
+        selectableRows
+        selectableRowsHighlight
+      />}
+
+        {/* <DataTable
+          title=" "
+          columns={columns}
+          data={selectedType}
+          pagination
+          fixedHeaderScrollHeight='450px'
+          selectableRows
+          selectableRowsHighlight
+        /> */}
 
       </div>
 

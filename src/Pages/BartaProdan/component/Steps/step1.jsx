@@ -12,9 +12,41 @@ import {
   renderSelect,
   renderText,
 } from "../common/DisplayComponent";
+// import { db } from '../../../../firebase';
+// import { collection, addDoc } from 'firebase/firestore';
+// import { query, onSnapshot, updateDoc, deleteDoc, doc } from 'firebase/firestore';
 
-const Step1 = ({ state, handleChange, handleNext, handleWhichCa }) => {
+const Step1 = ({ state, handleChange, handleNext, handleWhichCa, handletyp11 }) => {
   // const [whichCard, setWhichCard] = useState()
+  // const [todos, setTodos] = React.useState([]);
+  // const [sortedArrayForOne, setSortedArrayForOne] = React.useState([]);
+
+  // React.useEffect(() => {
+  //   const q = query(collection(db, "todos"));
+  //   const unsub = onSnapshot(q, (querySnapshot) => {
+  //     let todosArray = [];
+  //     querySnapshot.forEach((doc) => {
+  //       todosArray.push({ ...doc.data(), id: doc.id });
+  //     });
+  //     setTodos(todosArray);
+  //   });
+  //   return () => unsub();
+  // }, []);
+
+  // console.log("todos from step1::::::::::::::::::::::::", todos);
+
+  // const handleMapArray = () => {
+  //   todos.map(todo => {
+  //     if (todo.type === 1) {
+  //       setSortedArrayForOne([...sortedArrayForOne, todo]);
+  //       console.log("type 1 found >>>>>>>>>>>>>>>>>>>>>");
+  //     }
+  //   });
+  // };
+
+  // const filteredData = todos.filter(todo => todo.type === 1);
+
+  // console.log("filtered data step1::::::::::::::::::::::::", filteredData);
 
   return (
     <Paper style={styles.steps}>
@@ -27,7 +59,7 @@ const Step1 = ({ state, handleChange, handleNext, handleWhichCa }) => {
       </Box>
 
       <div className='d-flex mx-3 mt-2' style={{ fontFamily: 'Galada' }}>
-        <Card onClick={() => {handleWhichCa("1"); handleNext()}} className='m-2 box cardForHome border-0' style={{ backgroundColor: "lemonchiffon" }}>
+        <Card onClick={() => {handleWhichCa("1"); handleNext();}} className='m-2 box cardForHome border-0' style={{ backgroundColor: "lemonchiffon" }}>
           <div><img className='cardImg mt-2' src={sech} alt='cardlogo1' /></div>
           <div className='h6 mt-2'>সেচ গ্রাহকবৃন্দ</div>
         </Card>

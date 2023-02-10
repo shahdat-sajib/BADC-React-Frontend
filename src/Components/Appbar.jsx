@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { styled, alpha } from '@mui/material/styles';
+import { useNavigate } from 'react-router-dom'
 import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
 import IconButton from '@mui/material/IconButton';
@@ -18,6 +18,7 @@ import './Appbar.css'
 
 
 function Appbar() {
+    let navigate = useNavigate();
 
     const openNav = () => {
         document.getElementById("mySidenav").style.width = "150px";
@@ -172,10 +173,10 @@ function Appbar() {
                         <div>
                             <div id="mySidenav" className="sidenav">
                                 <a className="closebtn" onClick={closeNav}>&times;</a>
-                                <a href="https://www.google.com">View Contact</a>
-                                <a href="https://www.google.com">Send SMS</a>
-                                <a href="https://www.google.com">SMS History</a>
-                                <a href="https://www.google.com">SKIM Details</a>
+                                <a href="#">View Contact</a>
+                                <a href="#">Send SMS</a>
+                                <a href="#">SMS History</a>
+                                <a href="#">SKIM Details</a>
                             </div>
                         </div>
 
@@ -190,15 +191,19 @@ function Appbar() {
                             <MenuIcon />
                         </IconButton>
                         <Box sx={{ flexGrow: 1 }} />
-                        <img style={{ width: "40px", marginRight: "10px" }} src={mainLogo} alt='main logo' />
-                        <Typography style={{ fontFamily: 'Galada' }}
-                            variant="h6"
-                            noWrap
-                            component="div"
-                            sx={{ display: { xs: 'block', sm: 'block' } }}
-                        >
-                            কৃষক বন্ধু
-                        </Typography>
+                        <div><img style={{ width: "40px", marginRight: "10px" }} src={mainLogo} alt='main logo' /></div>
+
+                        <div onClick={() => { navigate('/') }}>
+                            <Typography style={{ fontFamily: 'Galada' }}
+                                variant="h6"
+                                noWrap
+                                component="div"
+                                sx={{ display: { xs: 'block', sm: 'block' } }}
+                            >
+                                কৃষক বন্ধু
+                            </Typography>
+                        </div>
+
                         {/* <Search>
                             <SearchIconWrapper>
                                 <SearchIcon />

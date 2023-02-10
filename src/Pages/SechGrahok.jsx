@@ -7,8 +7,12 @@ import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import { FormControl, InputLabel, MenuItem, Select, TextField } from '@mui/material';
 import Phonelist from '../Components/phonelist';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+import DataTable from 'react-data-table-component';
 
 const SechGrahok = () => {
+  const notify = () => toast.success("Contact added!");
   const [title, setTitle] = React.useState("");
   const [phone, setPhone] = React.useState("");
   const [type, setType] = React.useState("");
@@ -48,6 +52,23 @@ const SechGrahok = () => {
     await deleteDoc(doc(db, "todos", id));
   };
 
+  const columns = [
+    {
+      name: "Name",
+      selector: (row) => row.title,
+    },
+    {
+      name: "Phone",
+      selector: (row) => row.phone,
+    },
+    {
+      name: "ID",
+      selector: (row) => row.id,
+    },
+
+  ];
+
+
 
   return (
     <div style={{ backgroundColor: "white" }}>
@@ -70,11 +91,33 @@ const SechGrahok = () => {
             </Select>
           </FormControl>
           <div>
-            <Button style={{ backgroundColor: "green" }} className='px-5 py-1' type='submit'>Add</Button>
+            <Button onClick={notify} style={{ backgroundColor: "green" }} className='px-5 py-1' type='submit'>Add</Button>
+            <ToastContainer
+              position="top-right"
+              autoClose={600}
+              type="success"
+              hideProgressBar={false}
+              newestOnTop
+              closeOnClick
+              rtl={false}
+              pauseOnFocusLoss={false}
+              draggable={false}
+              pauseOnHover={false}
+              theme="light" />
           </div>
 
+          <DataTable
+            title=" "
+            columns={columns}
+            data={todos}
+            pagination
+            fixedHeaderScrollHeight='450px'
+            selectableRows
+            selectableRowsHighlight
+          />
 
-          <div>
+
+          {/* <div>
             {todos.map((todo) => (
               <Phonelist
                 key={todo.id}
@@ -83,7 +126,7 @@ const SechGrahok = () => {
                 handleEdit={handleEdit}
               />
             ))}
-          </div>
+          </div> */}
         </Form>
       </div>
     </div>

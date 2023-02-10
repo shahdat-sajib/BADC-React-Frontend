@@ -36,7 +36,6 @@ class FormComponent extends Component {
   };
 
   render() {
-    console.log(this.state.data)
 
     const { classes } = this.props;
 
@@ -46,7 +45,7 @@ class FormComponent extends Component {
     };
 
     const handleWhichCard = (target) => {
-      console.log("button clicked");
+      // console.log("button clicked");
       const { data, errors } = this.state;
       data["whichCard"] = target;
       this.setState({ data, errors })
@@ -65,7 +64,7 @@ class FormComponent extends Component {
 
     const handleNextStep = () => {
       let { stepCount } = this.state;
-      console.log("stepCount", stepCount);
+      // console.log("stepCount", stepCount);
       stepCount = stepCount + 1;
       this.setState({ stepCount });
     };
