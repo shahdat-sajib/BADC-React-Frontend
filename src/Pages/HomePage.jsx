@@ -17,7 +17,7 @@ const DemoPage = () => {
                         বাংলাদেশ কৃষি উন্নয়ন কর্পোরেশন (বিএডিসি)
                     </div>
                     <div className='h6 mobile-text'>
-                        সেচ বিভাগ
+                        সেচ বিভাগ, ঝালকাঠি
                     </div>
                 </div>
                 <img src={badcLogo} className='badclogo' alt='badc-logo' />

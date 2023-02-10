@@ -16,14 +16,8 @@ const Step2 = ({ state, handleChange, handleNext, handlePrev, data }) => {
   const [todos, setTodos] = React.useState([]);
   const filteredDataForType1 = todos.filter(todo => todo.type === 1);
   const filteredDataForType2 = todos.filter(todo => todo.type === 2);
-
-  // console.log("data in selection table", data);
-  
-  // if(data.whichCard === '1'){
-  //   console.log("option 1 detected>>>>>>>>>>>>>>>");
-    
-  //   console.log("filtered data step2::::::::::::::::::::::::", filteredData);
-  // }
+  const [selectedData, setSelectedData] = React.useState([]);
+  const phoneData = selectedData.length ? selectedData.map(data => data.phone) : [];
 
   React.useEffect(() => {
     const q = query(collection(db, "todos"));
@@ -37,35 +31,6 @@ const Step2 = ({ state, handleChange, handleNext, handlePrev, data }) => {
     return () => unsub();
   }, []);
 
-
-  // const handleMapArray = () => {
-  //   todos.map(todo => {
-  //     if (todo.type === 1) {
-  //       setSortedArrayForOne([...sortedArrayForOne, todo]);
-  //       console.log("type 1 found >>>>>>>>>>>>>>>>>>>>>");
-  //     }
-  //   });
-  // };
-
-  // const DataList = ({data}) => {
-  //   const mappedData = data.map((item) => {
-  //     if (item.type === 1) {
-  //       return <p>1 is found</p>
-  //     } else {
-  //       return <p>{item.type} is found</p>
-  //     }
-  //   });}
-
-  // console.log("sorted array test>>>>>>>>>>>>>", sortedArrayForOne);
-
-  // if(data.whichCard === '1'){
-  //   console.log("option 1 detected>>>>>>>>>>>>>>>");
-  //   selectedType = filteredDataForType1
-  // }
-  // if(data.whichCard === '2'){
-  //   console.log("option 2 detected>>>>>>>>>>>>>>>");
-  //   selectedType = filteredDataForType2
-  // }
 
   const columns = [
     {
@@ -83,6 +48,21 @@ const Step2 = ({ state, handleChange, handleNext, handlePrev, data }) => {
 
   ];
 
+  const handleRowSelect = (state) => {
+    setSelectedData(state.selectedRows);
+  };
+  
+  React.useEffect(() => {
+    console.log("Selected data from step2::::::",selectedData);
+    localStorage.setItem('selectedData', JSON.stringify(phoneData));
+  }, [selectedData]);
+
+  //to get this phone number data from local storage
+  // useEffect(() => {
+  //   const storedData = JSON.parse(localStorage.getItem('selectedData')) || [];
+  //   setSelectedData(storedData);
+  // }, []);
+
   return (
     <Paper style={styles.steps}>
       <Box style={{ marginTop: "-50px", marginBottom: "10px" }}>
@@ -94,7 +74,7 @@ const Step2 = ({ state, handleChange, handleNext, handlePrev, data }) => {
       </Box>
       {/* {DataList} */}
       <div>
-      {(data.whichCard === '1')  ? <DataTable
+        {(data.whichCard === '1') ? <DataTable
           title=" "
           columns={columns}
           data={filteredDataForType1}
@@ -102,26 +82,17 @@ const Step2 = ({ state, handleChange, handleNext, handlePrev, data }) => {
           fixedHeaderScrollHeight='450px'
           selectableRows
           selectableRowsHighlight
+          onSelectedRowsChange={handleRowSelect}
         /> : <DataTable
-        title=" "
-        columns={columns}
-        data={filteredDataForType2}
-        pagination
-        fixedHeaderScrollHeight='450px'
-        selectableRows
-        selectableRowsHighlight
-      />}
-
-        {/* <DataTable
           title=" "
           columns={columns}
-          data={selectedType}
+          data={filteredDataForType2}
           pagination
           fixedHeaderScrollHeight='450px'
           selectableRows
           selectableRowsHighlight
-        /> */}
-
+          onSelectedRowsChange={handleRowSelect}
+        />}
       </div>
 
       <Grid container component={Box} justify='center' className="mt-3">
