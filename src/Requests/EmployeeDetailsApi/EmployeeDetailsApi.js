@@ -1,13 +1,13 @@
-import { localApi } from "../api";
-import axios from "axios";
+// // import { localApi } from "../api";
+// import axios from "axios";
 
-const EmployeeDetails = async() => {
-    const response = await axios.get(`${localApi}employeeDetails`)
-    return response;
-}
+// const EmployeeDetails = async() => {
+//     // const response = await axios.get(`${localApi}employeeDetails`)
+//     return response;
+// }
 
-const Auth = {
-    EmployeeDetails
-}
+// const Auth = {
+//     EmployeeDetails
+// }
 
-export default Auth;
+// export default Auth;

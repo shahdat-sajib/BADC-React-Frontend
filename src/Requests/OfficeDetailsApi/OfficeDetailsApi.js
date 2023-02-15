@@ -1,4 +1,4 @@
-import { localApi } from "../api";
+// import { localApi } from "../api";
 import axios from "axios";
 
 const OfficeDetails = async() => {
